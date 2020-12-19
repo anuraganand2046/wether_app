@@ -21,7 +21,7 @@ app.get("/weather", (req, res)=>{
 })
 app.get("*", (req, res)=>{
     res.render("404", {
-        errormsg: "Oops!! Page not found.."
+        errormsg: "Oops!! Page not found..."
     });
 })
 app.listen(port, ()=>{

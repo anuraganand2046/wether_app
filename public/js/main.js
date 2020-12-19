@@ -13,10 +13,12 @@ const getInfo = async(event)=>{
     }
     else{
         try{
+            var d = new Date();
             let url= `https://api.openweathermap.org/data/2.5/weather?q=${val}&appid=7f1c00d1ddbacaf37acc52f377913767`;
             const response= await fetch(url);
             const data= await response.json();
             const arr= [data];
+            day.innerText = d;
             city_name.innerText= ` ${arr[0].name}, ${arr[0].sys.country}`;
             temp.innerText= arr[0].main.temp;
             const tempMood= arr[0].weather[0].main;
